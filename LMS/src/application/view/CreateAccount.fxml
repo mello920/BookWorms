@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="createAccountPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateAccountController">
+   <children>
+      <Label layoutX="209.0" layoutY="51.0" text="Create Your Account">
+         <font>
+            <Font name="Rockwell Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="110.0" layoutY="105.0" text="Username:">
+         <font>
+            <Font name="Rockwell" size="15.0" />
+         </font></Label>
+      <Label layoutX="112.0" layoutY="155.0" text="Password:" />
+      	<font>
+            <Font name="Rockwell" size="15.0" />
+         </font></Label>
+      <Label layoutX="139.0" layoutY="205.0" text="Email:" />
+      	<font>
+            <Font name="Rockwell" size="15.0" />
+         </font></Label>
+      <Button fx:id="submitButton" layoutX="267.0" layoutY="264.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
+      <Button fx:id="homePageButton" layoutX="470.0" layoutY="325.0" mnemonicParsing="false" onAction="#home" text="Home Page" />
+      <TextField fx:id="userNameField" layoutX="207.0" layoutY="100.0" />
+      <TextField fx:id="passwordField" layoutX="207.0" layoutY="150.0" />
+      <TextField fx:id="emailField" layoutX="207.0" layoutY="200.0" />
+      <Text layoutX="417.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(8 character minimum)">
+         <font>
+            <Font name="Rockwell" size="15.0" />
+         </font></Text>
+      <Text layoutX="417.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(abc123 format)" />
+   </children>
+</AnchorPane>
