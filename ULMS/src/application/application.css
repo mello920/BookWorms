@@ -1,0 +1,13 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+.root {
+	
+	-fx-background-color: lightblue;
+	-fx-font-family: "Rockwell";
+}
+
+#createAccountPane {
+	
+	-fx-background-color: lightblue;
+}
