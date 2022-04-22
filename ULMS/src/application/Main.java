@@ -1,5 +1,3 @@
-//testing sync from gitHub
-
 package application;
 	
 import javafx.application.Application;
