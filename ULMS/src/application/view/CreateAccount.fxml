@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="createAccountPane" fx:id="createAccountPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateAccountController">
+   <children>
+      <Label layoutX="209.0" layoutY="55.0" text="Create Your Account">
+         <font>
+            <Font name="Rockwell Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="passwordField" layoutX="205.0" layoutY="147.0" />
+      <TextField fx:id="emailField" layoutX="207.0" layoutY="193.0" />
+      <TextField fx:id="userNameField" layoutX="205.0" layoutY="103.0" />
+      <Button fx:id="submitButton" layoutX="266.0" layoutY="248.0" mnemonicParsing="false" onAction="#submit" text="Submit">
+         <font>
+            <Font name="Rockwell" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="homePageButton" layoutX="449.0" layoutY="315.0" mnemonicParsing="false" onAction="#home" text="Home Page">
+         <font>
+            <Font name="Rockwell" size="16.0" />
+         </font>
+      </Button>
+      <Text layoutX="115.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+         <font>
+            <Font name="Rockwell" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="117.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+         <font>
+            <Font name="Rockwell" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="144.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
+         <font>
+            <Font name="Rockwell" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="423.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(abc123 format)">
+         <font>
+            <Font name="Rockwell" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="423.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(8 character minimum)">
+         <font>
+            <Font name="Rockwell" size="16.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
