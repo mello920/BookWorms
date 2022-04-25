@@ -1,12 +1,12 @@
 package application.model;
 
-public class Book {
+public class Book { // format for Book class
 	private String title;
 	private String author;
 	private String user; 
 	private int serial;
 	
-	public Book(String title, String author, String user, int serial) {
+	public Book(String title, String author, String user, int serial) { // csv file is formated similarly to here
 		this.title = title;
 		this.author = author;
 		this.user = user;
@@ -49,7 +49,7 @@ public class Book {
 	
 	//toString method for display purposes
 	@Override
-	public String toString() {
+	public String toString() { // general toString method for testing
 		return "Book: "+ title + " | Author: "+ author + " | User: "+ user +" | Serial: " + serial ;
 	}
 	
