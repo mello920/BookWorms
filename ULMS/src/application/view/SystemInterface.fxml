@@ -19,15 +19,15 @@
       </Label>
       <TabPane layoutX="15.0" layoutY="76.0" prefHeight="269.0" prefWidth="568.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Search">
+          <Tab fx:id="searchTab" onSelectionChanged="#changeToSearch" text="Search">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <TextField fx:id="authorSearchText" layoutX="315.0" layoutY="41.0" promptText="Search authors.." />
                         <TableView fx:id="authorBookTitleTable" layoutX="24.0" layoutY="14.0" prefHeight="200.0" prefWidth="264.0">
                           <columns>
-                            <TableColumn prefWidth="120.0" text="Author" />
-                            <TableColumn prefWidth="141.0" text="Book Title" />
+                            <TableColumn fx:id="authorColumn" prefWidth="120.0" text="Author" />
+                            <TableColumn fx:id="titleColumn" prefWidth="141.0" text="Book Title" />
                           </columns>
                         </TableView>
                         <Button fx:id="authorSearchButton" layoutX="482.0" layoutY="41.0" mnemonicParsing="false" onAction="#searchAuthor" text="Search" />
