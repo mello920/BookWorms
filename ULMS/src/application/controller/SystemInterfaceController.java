@@ -2,6 +2,10 @@ package application.controller;
 
 import java.io.IOException;
 
+import application.model.Book;
+import application.model.BookCSVReader;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,8 +13,11 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -29,10 +36,15 @@ public class SystemInterfaceController {
     @FXML
     private TextField bookTitleSearchText, authorSearchText;
     @FXML
-    private TableView<String> authorBookTitleTable;
+    private TableView<Book> authorBookTitleTable;
     @FXML
     private Button authorSearchButton, bookTitleSearchButton;
-    
+    @FXML
+    private Tab searchTab;
+    @FXML
+    private TableColumn<Book, String> titleColumn, authorColumn;
+    @FXML
+    private ObservableList<Book> bookList; 
 
     @FXML
     void returnHome(ActionEvent event) throws IOException {
@@ -53,8 +65,13 @@ public class SystemInterfaceController {
     		authorSearchLabel.setTextFill(Color.RED);
     		authorSearchLabel.setText("Cannot search for nothing.");
     		
+    	} else if(searchAuthors(authorSearchText.getText())==-1) {
+    		authorSearchLabel.setOpacity(1.0);
+    		authorSearchLabel.setTextFill(Color.RED);
+    		authorSearchLabel.setText("Author not found.");
     	} else {
-    		
+    		authorBookTitleTable.scrollTo(searchAuthors(authorSearchText.getText()));
+    		authorSearchLabel.setOpacity(0.0);
     	}
     }
     
@@ -65,9 +82,42 @@ public class SystemInterfaceController {
     		bookTitleSearchLabel.setTextFill(Color.RED);
     		bookTitleSearchLabel.setText("Cannot search for nothing.");
     		
+    	} else if (searchTitles(bookTitleSearchText.getText())==-1) {
+    		bookTitleSearchLabel.setOpacity(1.0);
+    		bookTitleSearchLabel.setTextFill(Color.RED);
+    		bookTitleSearchLabel.setText("Title not found.");
     	} else {
-    		
+    		authorBookTitleTable.scrollTo(searchTitles(bookTitleSearchText.getText()));
+    		bookTitleSearchLabel.setOpacity(0.0);
     	}
     
     }
+    @FXML
+    void changeToSearch(ActionEvent event) {
+    	if(BookCSVReader.readBooksFromCSV("BookCatalogue.csv")!=null) {
+	    	bookList = FXCollections.observableList(BookCSVReader.readBooksFromCSV("BookCatalogue.csv"));
+	    	authorBookTitleTable.setItems(bookList);
+	    	authorColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("author"));
+	    	titleColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("title"));
+	    	bookTitleSearchLabel.setOpacity(0.0);
+	    	authorSearchLabel.setOpacity(0.0);
+    	}
+    	
+    }
+    
+    int searchAuthors(String author) {
+    	for(int i = 0; i < bookList.size(); i++)
+    		if(bookList.get(i).getAuthor() == author) {
+    			return i;
+    		}
+    	return -1;
+    }
+    int searchTitles(String title) {
+    	for(int i = 0; i < bookList.size(); i++)
+    		if(bookList.get(i).getTitle() == title) {
+    			return i;
+    		}
+    	return -1;
+    }
+    
 }
