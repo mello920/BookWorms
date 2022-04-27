@@ -46,6 +46,10 @@
             <Tab text="Transaction">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <children>
+                     <Button layoutX="126.0" layoutY="100.0" mnemonicParsing="false" text="Return Books" />
+                        <Button layoutX="312.0" layoutY="100.0" mnemonicParsing="false" text="Checkout Book" />
+                     </children></AnchorPane>
               </content>
             </Tab>
             <Tab text="Users">
