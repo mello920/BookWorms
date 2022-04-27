@@ -21,7 +21,7 @@ public class BookCSVReader { // general csv reader for BookCatalogue csv
 		return books;
 	}
 	
-	static List<Book> readBooksFromCSV(String fileName) { // read from file using bufferedReader
+	public static List<Book> readBooksFromCSV(String fileName) { // read from file using bufferedReader
 		List<Book> books =new ArrayList<>();
 		Path pathToFIle = Paths.get(fileName);
 		

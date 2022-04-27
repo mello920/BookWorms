@@ -30,11 +30,11 @@
                             <TableColumn prefWidth="141.0" text="Book Title" />
                           </columns>
                         </TableView>
-                        <Button fx:id="authorSearchButton" layoutX="482.0" layoutY="41.0" mnemonicParsing="false" text="Search" />
-                        <Button fx:id="bookTitleSearchButton" layoutX="482.0" layoutY="120.0" mnemonicParsing="false" text="Search" />
+                        <Button fx:id="authorSearchButton" layoutX="482.0" layoutY="41.0" mnemonicParsing="false" onAction="#searchAuthor" text="Search" />
+                        <Button fx:id="bookTitleSearchButton" layoutX="482.0" layoutY="120.0" mnemonicParsing="false" onAction="#searchBookTitle" text="Search" />
                         <TextField fx:id="bookTitleSearchText" layoutX="315.0" layoutY="120.0" promptText="Search book titles..." />
-                        <Label fx:id="authorSearchLabel" layoutX="313.0" layoutY="74.0" prefHeight="22.0" prefWidth="153.0" text="Author search status." />
-                        <Label fx:id="bookTitleSearchLabel" layoutX="313.0" layoutY="154.0" prefHeight="22.0" prefWidth="163.0" text="Book title search status." />
+                        <Label fx:id="authorSearchLabel" layoutX="313.0" layoutY="74.0" opacity="0.0" prefHeight="22.0" prefWidth="153.0" text="Author search status." />
+                        <Label fx:id="bookTitleSearchLabel" layoutX="313.0" layoutY="154.0" opacity="0.0" prefHeight="22.0" prefWidth="163.0" text="Book title search status." />
                      </children></AnchorPane>
             </content>
           </Tab>
