@@ -13,7 +13,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/application/view/Main.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getClassLoader().getResource("/application/view/Main.fxml"));
 			Scene scene = new Scene(root,600,425);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("University Library Management System");
