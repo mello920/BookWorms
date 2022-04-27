@@ -119,5 +119,57 @@ public class SystemInterfaceController {
     		}
     	return -1;
     }
+	
+	
+    @FXML
+    private TextField serialTextFieldRemove; //TC: catalogue tab
+    
+    @FXML
+    private TextField serialTextFieldAdd;
+    
+    @FXML
+    private TextField authorTextField; 
+    
+    @FXML
+    private TextField titleTextField; 
+    
+    @FXML
+    void addBookHandle(ActionEvent event) throws IOException {
+    	String title = titleTextField.getText().toString()+"/t";
+    	String author = authorTextField.getText().toString()+"/t";
+    	String serialText = serialTextFieldAdd.getText().toString()+"\n";
+    	
+    	FileWriter file = new FileWriter("BookCatalogue.csv", true);
+    	/*file.append(title);
+    	file.append(",");
+    	file.append(author);
+    	file.append(",");
+    	file.append(" ");// left blank for user area
+    	file.append(",");
+    	file.append(serialText);
+    	file.append(",");
+    	file.append("\n");*/
+    	
+    	
+    	file.write(title+"/t");
+    	file.write(author+"/t");
+    	file.write(" "+"/t"); 
+    	file.write(serialText);
+    	file.write(System.getProperty("line.seperator"));
+    	file.close();
+    	
+    	titleTextField.clear();
+    	authorTextField.clear();
+    	serialTextFieldAdd.clear();
+    	
+    	Alert alert=new Alert(AlertType.CONFIRMATION);
+    	alert.showAndWait();
+    	
+    }
+    
+    @FXML
+    void removeBookHandle(ActionEvent event) throws IOException {
+    	
+    }
     
 }
